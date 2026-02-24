@@ -13,19 +13,22 @@ public partial class Minot : CharacterBody2D
 
 	public override void _Ready()
 	{
-		this.GlobalPosition = new Vector2(56,56);	
-		//Test ezavufbhozfe js,pfkidno
+		this.GlobalPosition = new Vector2(56,56);
 	}
 
 	public override void _Process(double delta)
 	{
+
+		// Recupération des noeuds enfants Raycast
 		RayCast2D RayUp = this.GetNode<RayCast2D>("Up");
 		RayCast2D RayDown = this.GetNode<RayCast2D>("Down");
 		RayCast2D RayRight = this.GetNode<RayCast2D>("Right");
 		RayCast2D RayLeft = this.GetNode<RayCast2D>("Left");
+
+		// Gestion des inputs
 		if((sprite_node_pos_tween == null) || (!sprite_node_pos_tween.IsRunning())) //Gestion de l'animation (pour plus tard pas que le joueur puisse entrer un input)
 		{
-			if (Input.IsActionJustPressed("move_right") && (!RayRight.IsColliding()))
+			if (Input.IsActionJustPressed("move_right") && (!RayRight.IsColliding())) //"IsActionJustPressed" au lieu d'un "IsActionPressed" pour un mouvement fluide sans l'animation
 			{
 				Move(RIGHT);
 			}
@@ -44,23 +47,9 @@ public partial class Minot : CharacterBody2D
 			}
 		}
 
-
-		TileMapLayer Grid = this.GetNode<TileMapLayer>("../Grid");
+		//Gestion du passage de niveau
 	}
-
-	public void Move2(Vector2 dir)
-	{
-		Sprite2D spriteCharacter = this.GetNode<Sprite2D>("Sprite2D");
-		this.GlobalPosition += dir*tilesize;
-		spriteCharacter.GlobalPosition -= dir*tilesize;
-
-		if(sprite_node_pos_tween != null)
-			sprite_node_pos_tween.Kill();
-		sprite_node_pos_tween = CreateTween();
-		sprite_node_pos_tween.SetProcessMode(Tween.TweenProcessMode.Physics);
-		sprite_node_pos_tween.TweenProperty(spriteCharacter,"position", GlobalPosition, 0.185f).SetTrans(Tween.TransitionType.Sine);
-	}
-
+	
 	public void Move(Vector2 dir)
 	{
 		TileMapLayer Grid = this.GetNode<TileMapLayer>("../Grid");
