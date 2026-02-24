@@ -14,6 +14,7 @@ public partial class Minot : CharacterBody2D
 	public override void _Ready()
 	{
 		this.GlobalPosition = new Vector2(56,56);	
+		//Test ezavufbhozfe js,pfkidno
 	}
 
 	public override void _Process(double delta)
