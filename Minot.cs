@@ -13,7 +13,6 @@ public partial class Minot : CharacterBody2D
 
 	public override void _Ready()
 	{
-		this.GlobalPosition = new Vector2(56,56);
 	}
 
 	public override void _Process(double delta)
@@ -46,13 +45,12 @@ public partial class Minot : CharacterBody2D
 				Move(UP);
 			}
 		}
-
 		//Gestion du passage de niveau
 	}
-	
+
 	public void Move(Vector2 dir)
 	{
-		TileMapLayer Grid = this.GetNode<TileMapLayer>("../Grid");
+		TileMapLayer Grid = this.GetNode<TileMapLayer>("..");
 		if (Grid == null) 
 		{
 			GD.PrintErr("Erreur : TileMapLayer non trouvé !");
