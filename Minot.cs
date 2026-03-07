@@ -5,7 +5,7 @@ using System.Threading;
 public partial class Minot : CharacterBody2D
 {
 	public static float tilesize = 16;
-	public Tween sprite_node_pos_tween;
+	public Tween spriteNodePosTween;
 	public Vector2 RIGHT = new Vector2(1,0);
 	public Vector2 LEFT = new Vector2(-1,0);
 	public Vector2 DOWN = new Vector2(0,1);
@@ -25,7 +25,7 @@ public partial class Minot : CharacterBody2D
 		RayCast2D RayLeft = this.GetNode<RayCast2D>("Left");
 
 		// Gestion des inputs
-		if((sprite_node_pos_tween == null) || (!sprite_node_pos_tween.IsRunning())) //Gestion de l'animation (pour plus tard pas que le joueur puisse entrer un input)
+		if((spriteNodePosTween == null) || (!spriteNodePosTween.IsRunning())) //Gestion de l'animation (pour plus tard pas que le joueur puisse entrer un input)
 		{
 			if (Input.IsActionJustPressed("move_right") && (!RayRight.IsColliding())) //"IsActionJustPressed" au lieu d'un "IsActionPressed" pour un mouvement fluide sans l'animation
 			{
@@ -57,13 +57,13 @@ public partial class Minot : CharacterBody2D
 			return;
 		}
 
-		Vector2I current_tile = Grid.LocalToMap(GlobalPosition);
-		Vector2I target_tile = current_tile + (Vector2I)dir;  
+		Vector2I currentTile = Grid.LocalToMap(GlobalPosition);
+		Vector2I targetTile = currentTile + (Vector2I)dir;  
 
-		TileData tile_data = Grid.GetCellTileData(target_tile);
+		TileData tile_data = Grid.GetCellTileData(targetTile);
 		if (tile_data == null || !tile_data.GetCustomData("walkable").AsBool())
 			return;
 
-		this.GlobalPosition = Grid.MapToLocal(target_tile);
+		this.GlobalPosition = Grid.MapToLocal(targetTile);
 	}
 }

@@ -1,10 +1,13 @@
 using Godot;
 using System;
 
-public partial class NextLevel : Area2D
+public partial class NextLevel : Sprite2D
 {
-	void on_body_entered()
+	[Export]
+	PackedScene nextLevel;
+	private void OnPassageBodyEntered(Node2D body)
 	{
-		GetTree().ChangeSceneToFile("res://level1.tscn");
+		GD.Print("Body détecté !!");
+		GetTree().ChangeSceneToPacked(nextLevel);
 	}
 }
