@@ -10,6 +10,7 @@ public partial class Minot : CharacterBody2D
 	public Vector2 LEFT = new Vector2(-1,0);
 	public Vector2 DOWN = new Vector2(0,1);
 	public Vector2 UP = new Vector2(0,-1);
+	public bool HasMoved = false;
 
 	public override void _Ready()
 	{
@@ -17,6 +18,7 @@ public partial class Minot : CharacterBody2D
 
 	public override void _Process(double delta)
 	{
+		HasMoved = false;
 
 		// Recupération des noeuds enfants Raycast
 		RayCast2D RayUp = this.GetNode<RayCast2D>("Up");
@@ -39,7 +41,6 @@ public partial class Minot : CharacterBody2D
 			{
 				Move(DOWN);
 			}
-				
 			else if (Input.IsActionJustPressed("move_up") && (!RayUp.IsColliding()))
 			{
 				Move(UP);
@@ -50,6 +51,7 @@ public partial class Minot : CharacterBody2D
 
 	public void Move(Vector2 dir)
 	{
+		HasMoved = true;
 		TileMapLayer Grid = this.GetNode<TileMapLayer>("..");
 		if (Grid == null) 
 		{

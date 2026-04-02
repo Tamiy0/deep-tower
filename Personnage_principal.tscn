@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8n24y"]
 size = Vector2(8, 8)
 
-[node name="Minot" type="CharacterBody2D"]
+[node name="Minot" type="CharacterBody2D" groups=["Joueur"]]
 position = Vector2(56, 56)
 script = ExtResource("1_14a8b")
 
