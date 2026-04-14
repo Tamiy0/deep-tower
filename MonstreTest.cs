@@ -4,7 +4,6 @@ using System;
 public partial class MonstreTest : MonstreDeBase
 {
 	public static float tilesize = 16;
-	public Tween spriteNodePosTween;
 	public Vector2 RIGHT = new Vector2(1,0);
 	public Vector2 LEFT = new Vector2(-1,0);
 	public Vector2 DOWN = new Vector2(0,1);
@@ -37,7 +36,7 @@ public partial class MonstreTest : MonstreDeBase
 		TileMapLayer Grid = this.GetNode<TileMapLayer>("..");
 		Minot Minot = this.GetNode<Minot>("../Minot");
 
-		if(Minot.HasMoved)
+		if(Minot.IsMoving)
 		{
 			if (Grid == null) 
 			{
@@ -55,7 +54,9 @@ public partial class MonstreTest : MonstreDeBase
 				return;
 			}
 
-			this.GlobalPosition = Grid.MapToLocal(targetTile);
+		Vector2 targetPos = Grid.MapToLocal(targetTile);
+		Tween tween = CreateTween();
+		tween.TweenProperty(this, "global_position", targetPos, 0.18f);
 		}
 
 	}
