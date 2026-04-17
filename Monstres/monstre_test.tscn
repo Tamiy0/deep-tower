@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bqx8h0grkjur4"]
 
-[ext_resource type="Script" uid="uid://c32frvqy1rqcd" path="res://MonstreTest.cs" id="1_ld8gj"]
+[ext_resource type="Script" uid="uid://c32frvqy1rqcd" path="res://Monstres/MonstreTest.cs" id="1_ld8gj"]
 [ext_resource type="Texture2D" uid="uid://pxkejyxknsut" path="res://Assets/Monstres/MonstreTest.png" id="1_qt5k2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ld8gj"]

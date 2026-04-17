@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=4 uid="uid://88tmajnxa876"]
 
 [ext_resource type="Texture2D" uid="uid://hw62bv05rhfr" path="res://Assets/TileSet/TileSet_test.png" id="1_ootpb"]
-[ext_resource type="Script" uid="uid://c185du40l3k0d" path="res://Grid1.cs" id="2_v38iq"]
-[ext_resource type="PackedScene" uid="uid://dw057iwema4c2" path="res://Personnage_principal.tscn" id="3_v8kj3"]
+[ext_resource type="Script" uid="uid://c185du40l3k0d" path="res://Niveaux/Grid1.cs" id="2_v38iq"]
+[ext_resource type="PackedScene" uid="uid://dw057iwema4c2" path="res://Joueur/Personnage_principal.tscn" id="3_v8kj3"]
 [ext_resource type="PackedScene" uid="uid://dev6fnu6eba1y" path="res://next_level.tscn" id="5_crycw"]
-[ext_resource type="PackedScene" uid="uid://bu4xswa3b8o1r" path="res://level2.tscn" id="6_crycw"]
+[ext_resource type="PackedScene" uid="uid://bu4xswa3b8o1r" path="res://Niveaux/level2.tscn" id="6_crycw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ootpb"]
 texture = ExtResource("1_ootpb")

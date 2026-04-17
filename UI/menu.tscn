@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=4 uid="uid://dag0j1x21ynn6"]
 
 [ext_resource type="Texture2D" uid="uid://hw62bv05rhfr" path="res://Assets/TileSet/TileSet_test.png" id="1_mae5d"]
-[ext_resource type="Script" uid="uid://cr0hv3jvd8e77" path="res://GridMenu.cs" id="2_4hy44"]
-[ext_resource type="PackedScene" uid="uid://dw057iwema4c2" path="res://Personnage_principal.tscn" id="3_ytr4m"]
+[ext_resource type="Script" uid="uid://cr0hv3jvd8e77" path="res://UI/GridMenu.cs" id="2_4hy44"]
+[ext_resource type="PackedScene" uid="uid://dw057iwema4c2" path="res://Joueur/Personnage_principal.tscn" id="3_ytr4m"]
 [ext_resource type="PackedScene" uid="uid://dev6fnu6eba1y" path="res://next_level.tscn" id="4_kk3ma"]
-[ext_resource type="PackedScene" uid="uid://88tmajnxa876" path="res://level1.tscn" id="5_nrnbx"]
+[ext_resource type="PackedScene" uid="uid://88tmajnxa876" path="res://Niveaux/level1.tscn" id="5_nrnbx"]
 [ext_resource type="Texture2D" uid="uid://d2av2vfp4g22d" path="res://Assets/Menu/Jouer.png" id="6_iqepy"]
 [ext_resource type="Texture2D" uid="uid://doqvngn832wo5" path="res://Assets/Menu/Paramètres.png" id="7_h1wq0"]
 [ext_resource type="Texture2D" uid="uid://dvrtw2ksrtwsx" path="res://Assets/Menu/Quitter.png" id="8_dwrpx"]

@@ -12,6 +12,6 @@ public partial class GameManager : Node
 	private void GameOver()
 	{
 		GD.Print("Le joueur a été attrapé ! Condition de défaite activée.");
-		GetTree().CallDeferred(SceneTree.MethodName.ChangeSceneToFile, "res://ecran_defaite.tscn");
+		GetTree().CallDeferred(SceneTree.MethodName.ChangeSceneToFile, "res://UI//ecran_defaite.tscn");
 	}
 }

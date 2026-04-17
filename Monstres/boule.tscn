@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bxyad7bin5y1e"]
 
-[ext_resource type="Script" uid="uid://gwr3an3oyu6k" path="res://Boule.cs" id="1_mt5kb"]
+[ext_resource type="Script" uid="uid://gwr3an3oyu6k" path="res://Monstres/Boule.cs" id="1_mt5kb"]
 [ext_resource type="Texture2D" uid="uid://bn1txu057x1t8" path="res://Assets/Monstres/Boule.png" id="2_rnyp4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ywfcg"]

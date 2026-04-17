@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dw057iwema4c2"]
 
-[ext_resource type="Script" uid="uid://cqi8bhw17bac1" path="res://Minot.cs" id="1_14a8b"]
+[ext_resource type="Script" uid="uid://cqi8bhw17bac1" path="res://Joueur/Minot.cs" id="1_14a8b"]
 [ext_resource type="Texture2D" uid="uid://cn6cii16urge7" path="res://Assets/Personnage principale/Cube.png" id="2_k372p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8n24y"]
