@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://cikxx52tlll2k"]
+[gd_scene load_steps=9 format=4 uid="uid://cikxx52tlll2k"]
 
 [ext_resource type="Texture2D" uid="uid://hw62bv05rhfr" path="res://Assets/TileSet/TileSet_test.png" id="1_1fhj5"]
 [ext_resource type="PackedScene" uid="uid://dw057iwema4c2" path="res://Personnage_principal.tscn" id="2_16pka"]
 [ext_resource type="Script" uid="uid://bajcwrjbhxm6n" path="res://Grid3.cs" id="2_j8bo8"]
 [ext_resource type="PackedScene" uid="uid://byhnlm77x14kj" path="res://ours.tscn" id="4_an40m"]
+[ext_resource type="PackedScene" uid="uid://dev6fnu6eba1y" path="res://next_level.tscn" id="5_mu84n"]
+[ext_resource type="PackedScene" uid="uid://cboisp1ox04tt" path="res://level4.tscn" id="6_bmsap"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j8bo8"]
 texture = ExtResource("1_1fhj5")
@@ -46,4 +48,9 @@ script = ExtResource("2_j8bo8")
 position = Vector2(88, 72)
 
 [node name="Minot" parent="Grid_3" instance=ExtResource("2_16pka")]
+z_index = 1
 position = Vector2(40, 104)
+
+[node name="Passage" parent="Grid_3" instance=ExtResource("5_mu84n")]
+position = Vector2(40, 24)
+nextLevel = ExtResource("6_bmsap")

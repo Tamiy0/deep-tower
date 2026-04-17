@@ -50,6 +50,10 @@ public partial class Minot : CharacterBody2D
 			{
 				Move(ZERO);
 			}
+			else if (Input.IsActionJustPressed("restart"))
+			{
+				GetTree().ReloadCurrentScene();
+			}
 		}
 	}
 

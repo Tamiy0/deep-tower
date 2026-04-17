@@ -44,6 +44,7 @@ script = ExtResource("2_8tcn8")
 position = Vector2(24, 72)
 
 [node name="Minot" parent="Grid_2" instance=ExtResource("2_6q4t8")]
+z_index = 1
 position = Vector2(40, 24)
 
 [node name="SpritePassage" parent="Grid_2" instance=ExtResource("5_21xmu")]

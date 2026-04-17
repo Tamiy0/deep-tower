@@ -1,0 +1,71 @@
+[gd_scene load_steps=12 format=4 uid="uid://dr6hnljpwwehn"]
+
+[ext_resource type="Texture2D" uid="uid://hw62bv05rhfr" path="res://Assets/TileSet/TileSet_test.png" id="1_6gmk6"]
+[ext_resource type="Script" uid="uid://ugy760i8g7lt" path="res://GridDefaite.cs" id="2_sb3ur"]
+[ext_resource type="PackedScene" uid="uid://dw057iwema4c2" path="res://Personnage_principal.tscn" id="3_ovevc"]
+[ext_resource type="PackedScene" uid="uid://dev6fnu6eba1y" path="res://next_level.tscn" id="4_e7opo"]
+[ext_resource type="PackedScene" uid="uid://dag0j1x21ynn6" path="res://menu.tscn" id="5_3337l"]
+[ext_resource type="PackedScene" uid="uid://88tmajnxa876" path="res://level1.tscn" id="6_cve3u"]
+[ext_resource type="Texture2D" uid="uid://dsviqvdryy3vc" path="res://Assets/Menu/Ecran Titre.png" id="7_koakj"]
+[ext_resource type="Texture2D" uid="uid://dvrmy2jomwfve" path="res://Assets/Menu/Recommencer.png" id="8_sl2pe"]
+[ext_resource type="Texture2D" uid="uid://cd6ejc0ia6u8s" path="res://Assets/Menu/Perdu.png" id="9_lgxb1"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ve6s8"]
+texture = ExtResource("1_6gmk6")
+1:0/0 = 0
+0:1/0 = 0
+0:1/0/custom_data_0 = true
+1:1/0 = 0
+1:1/0/custom_data_0 = true
+0:2/0 = 0
+0:5/0 = 0
+0:5/0/custom_data_0 = true
+1:5/0 = 0
+1:5/0/custom_data_0 = true
+2:5/0 = 0
+2:5/0/custom_data_0 = true
+0:6/0 = 0
+0:6/0/custom_data_0 = true
+1:6/0 = 0
+1:6/0/custom_data_0 = true
+2:6/0 = 0
+2:6/0/custom_data_0 = true
+
+[sub_resource type="TileSet" id="TileSet_nlocp"]
+custom_data_layer_0/name = "walkable"
+custom_data_layer_0/type = 1
+sources/0 = SubResource("TileSetAtlasSource_ve6s8")
+
+[node name="ecran_defaite" type="Node2D"]
+
+[node name="GridDefaite" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAIAAAAAAAEAAAAAAAIAAAAAAAIAAAAAAAIAAAAAAAMAAAAAAAIAAAAAAAQAAAAAAAIAAAAAAAUAAAAAAAIAAAAAAAYAAAAAAAIAAAAAAAcAAAAAAAIAAAAAAAgAAAAAAAIAAAABAAgAAAAAAAIAAAACAAgAAAAAAAIAAAADAAgAAAAAAAIAAAAEAAgAAAAAAAIAAAAFAAgAAAAAAAIAAAAGAAgAAAAAAAIAAAAHAAgAAAAAAAIAAAAIAAgAAAAAAAIAAAAJAAgAAAAAAAIAAAAKAAgAAAAAAAIAAAAKAAAAAAAAAAIAAAAJAAAAAAAAAAIAAAAIAAAAAAAAAAIAAAAHAAAAAAAAAAIAAAAGAAAAAAAAAAIAAAAFAAAAAAAAAAIAAAAEAAAAAAAAAAIAAAADAAAAAAAAAAIAAAACAAAAAAAAAAIAAAABAAAAAAAAAAIAAAABAAEAAAABAAUAAAABAAIAAAABAAUAAAABAAMAAAABAAUAAAABAAQAAAABAAUAAAABAAUAAAABAAUAAAABAAYAAAABAAUAAAABAAcAAAABAAUAAAACAAcAAAABAAUAAAADAAcAAAABAAUAAAAEAAcAAAABAAUAAAAFAAcAAAABAAUAAAAGAAcAAAABAAUAAAAHAAcAAAABAAUAAAAIAAcAAAABAAUAAAAJAAcAAAABAAUAAAAKAAcAAAAAAAIAAAAKAAYAAAAAAAIAAAAJAAYAAAABAAUAAAAIAAYAAAABAAUAAAAHAAYAAAABAAUAAAAGAAYAAAABAAUAAAAFAAYAAAABAAYAAAAEAAYAAAABAAUAAAADAAYAAAABAAUAAAACAAYAAAABAAUAAAACAAUAAAAAAAEAAAADAAUAAAABAAUAAAAEAAUAAAABAAUAAAAFAAUAAAABAAUAAAAGAAUAAAABAAUAAAAHAAUAAAABAAUAAAAIAAUAAAABAAUAAAAJAAUAAAABAAUAAAAKAAUAAAAAAAIAAAAKAAQAAAAAAAIAAAAJAAQAAAABAAUAAAAIAAQAAAABAAUAAAAHAAQAAAABAAUAAAAGAAQAAAABAAUAAAAFAAQAAAABAAYAAAAEAAQAAAABAAUAAAADAAQAAAABAAUAAAACAAQAAAABAAUAAAACAAMAAAABAAUAAAADAAMAAAABAAUAAAAEAAMAAAABAAUAAAAFAAMAAAABAAUAAAAGAAMAAAABAAUAAAAHAAMAAAABAAUAAAAIAAMAAAABAAUAAAAJAAMAAAABAAUAAAAKAAMAAAAAAAIAAAAKAAIAAAAAAAIAAAAJAAIAAAABAAUAAAAIAAIAAAABAAUAAAAHAAIAAAABAAUAAAAGAAIAAAABAAUAAAAFAAIAAAABAAUAAAAEAAIAAAABAAUAAAADAAIAAAABAAUAAAACAAIAAAABAAUAAAACAAEAAAABAAUAAAADAAEAAAABAAUAAAAEAAEAAAABAAUAAAAFAAEAAAABAAUAAAAGAAEAAAABAAUAAAAHAAEAAAABAAUAAAAIAAEAAAABAAUAAAAJAAEAAAABAAUAAAAKAAEAAAAAAAIAAAA=")
+tile_set = SubResource("TileSet_nlocp")
+script = ExtResource("2_sb3ur")
+
+[node name="Minot" parent="GridDefaite" instance=ExtResource("3_ovevc")]
+z_index = 1
+position = Vector2(40, 88)
+
+[node name="PassageEcranTitre" parent="GridDefaite" instance=ExtResource("4_e7opo")]
+position = Vector2(72, 72)
+nextLevel = ExtResource("5_3337l")
+
+[node name="PassageRecommencer" parent="GridDefaite" instance=ExtResource("4_e7opo")]
+position = Vector2(72, 104)
+nextLevel = ExtResource("6_cve3u")
+
+[node name="EcranTitre" type="Sprite2D" parent="."]
+position = Vector2(119, 72)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("7_koakj")
+
+[node name="Recommencer" type="Sprite2D" parent="."]
+position = Vector2(119, 104)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("8_sl2pe")
+
+[node name="Perdu" type="Sprite2D" parent="."]
+position = Vector2(89, 31)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("9_lgxb1")

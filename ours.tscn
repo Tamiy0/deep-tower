@@ -20,4 +20,4 @@ shape = SubResource("RectangleShape2D_tb5vi")
 
 [node name="Vision" type="RayCast2D" parent="."]
 position = Vector2(8, 0)
-target_position = Vector2(1200, 0)
+target_position = Vector2(600, 0)
