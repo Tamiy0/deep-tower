@@ -3,7 +3,6 @@ using System;
 
 public partial class MonstreTest : MonstreDeBase
 {
-	public static float tilesize = 16;
 	public Vector2 RIGHT = new Vector2(1,0);
 	public Vector2 LEFT = new Vector2(-1,0);
 	public Vector2 DOWN = new Vector2(0,1);
@@ -12,14 +11,7 @@ public partial class MonstreTest : MonstreDeBase
 
 	public override void _Process(double delta)
 	{
-
-		// Recupération des noeuds enfants Raycast
-		RayCast2D RayUp = this.GetNode<RayCast2D>("Up");
-		RayCast2D RayDown = this.GetNode<RayCast2D>("Down");
-		RayCast2D RayRight = this.GetNode<RayCast2D>("Right");
-		RayCast2D RayLeft = this.GetNode<RayCast2D>("Left");
-
-		// Pour le test mouvemnt de gauche à droite à l'horizontale
+		//Mouvements de gauche à droite à l'horizontale
 		if(right)
 		{
 			Move(RIGHT);
@@ -54,12 +46,24 @@ public partial class MonstreTest : MonstreDeBase
 				return;
 			}
 
+			var tousLesMonstres = GetTree().GetNodesInGroup("Monstres");
+			foreach (MonstreDeBase autreMonstre in tousLesMonstres)
+			{
+				if (autreMonstre != this) 
+				{
+					Vector2I caseAutreMonstre = Grid.LocalToMap(autreMonstre.GlobalPosition);
+					if (caseAutreMonstre == targetTile)
+					{
+						right = !right;
+						return;
+					}
+				}
+			}
+
 		Vector2 targetPos = Grid.MapToLocal(targetTile);
 		Tween tween = CreateTween();
-		tween.TweenProperty(this, "global_position", targetPos, 0.18f);
+		tween.TweenProperty(this, "global_position", targetPos, 0.2f);
 		}
 
 	}
-
-	//Gestion des collisions
 }

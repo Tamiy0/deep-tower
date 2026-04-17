@@ -56,6 +56,17 @@ public partial class Boule : MonstreDeBase
 			if (tile_data == null || !tile_data.GetCustomData("walkable").AsBool())
 				return;
 
+			var tousLesMonstres = GetTree().GetNodesInGroup("Monstres");
+			foreach (MonstreDeBase autreMonstre in tousLesMonstres)
+			{
+				if (autreMonstre != this) 
+				{
+					Vector2I caseAutreMonstre = Grid.LocalToMap(autreMonstre.GlobalPosition);
+					if (caseAutreMonstre == targetTile)
+						return;
+				}
+			}
+
 		Vector2 targetPos = Grid.MapToLocal(targetTile);
 		Tween tween = CreateTween();
 		tween.TweenProperty(this, "global_position", targetPos, 0.18f);
