@@ -43,6 +43,7 @@ tile_set = SubResource("TileSet_qhkqn")
 script = ExtResource("2_1ondc")
 
 [node name="Minot" parent="Grid5" instance=ExtResource("3_ggyc0")]
+z_index = 1
 position = Vector2(328, 248)
 
 [node name="Ours1" parent="Grid5" instance=ExtResource("4_8jci7")]

@@ -43,12 +43,15 @@ tile_set = SubResource("TileSet_bskkw")
 script = ExtResource("2_71dcq")
 
 [node name="Minot" parent="Grid7" instance=ExtResource("4_u47yb")]
+z_index = 2
 position = Vector2(72, 264)
 
 [node name="Ours" parent="Grid7" instance=ExtResource("2_v1l8v")]
+z_index = 1
 position = Vector2(56, 168)
 
 [node name="boule" parent="Grid7" instance=ExtResource("3_71dcq")]
+z_index = 1
 position = Vector2(392, 72)
 
 [node name="Contrôles" type="Sprite2D" parent="Grid7"]

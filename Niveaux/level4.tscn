@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://cboisp1ox04tt"]
+[gd_scene load_steps=10 format=4 uid="uid://cboisp1ox04tt"]
 
 [ext_resource type="Texture2D" uid="uid://hw62bv05rhfr" path="res://Assets/TileSet/TileSet_test.png" id="1_dfp8v"]
 [ext_resource type="Script" uid="uid://3whypcovernq" path="res://Niveaux/Grid4.cs" id="2_bsi6h"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://byhnlm77x14kj" path="res://Monstres/ours.tscn" id="4_dqaeo"]
 [ext_resource type="PackedScene" uid="uid://dev6fnu6eba1y" path="res://next_level.tscn" id="5_13cu1"]
 [ext_resource type="Texture2D" uid="uid://n1ejm6timhle" path="res://Assets/Menu/Contrôles.png" id="6_bsi6h"]
+[ext_resource type="PackedScene" uid="uid://hg8dq3ifr6jy" path="res://Niveaux/level5.tscn" id="6_o5hk0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_na6m6"]
 texture = ExtResource("1_dfp8v")
@@ -61,6 +62,7 @@ position = Vector2(296, 120)
 
 [node name="Passage" parent="Grid4" instance=ExtResource("5_13cu1")]
 position = Vector2(328, 248)
+nextLevel = ExtResource("6_o5hk0")
 
 [node name="Contrôles" type="Sprite2D" parent="."]
 position = Vector2(232, 24)
