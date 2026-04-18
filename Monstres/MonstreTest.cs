@@ -52,13 +52,14 @@ public partial class MonstreTest : MonstreDeBase
 				if (autreMonstre != this) 
 				{
 					Vector2I caseAutreMonstre = Grid.LocalToMap(autreMonstre.GlobalPosition);
-					if (caseAutreMonstre == targetTile)
+					if (caseAutreMonstre == targetTile || autreMonstre.CaseCible == targetTile)
 					{
 						right = !right;
 						return;
 					}
 				}
 			}
+			this.CaseCible = targetTile;
 
 		Vector2 targetPos = Grid.MapToLocal(targetTile);
 		Tween tween = CreateTween();

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cu0amo0n74aa2" path="res://Monstres/Ours.cs" id="1_tb5vi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tb5vi"]
-size = Vector2(10, 7)
+size = Vector2(9, 7)
 
 [node name="Ours" type="CharacterBody2D" groups=["Monstres"]]
 script = ExtResource("1_tb5vi")
@@ -15,7 +15,7 @@ texture = ExtResource("1_l16pr")
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, -0.5)
+position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_tb5vi")
 
 [node name="Vision" type="RayCast2D" parent="."]

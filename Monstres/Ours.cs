@@ -44,10 +44,11 @@ public partial class Ours : MonstreDeBase
 				if (autreMonstre != this) 
 				{
 					Vector2I caseAutreMonstre = Grid.LocalToMap(autreMonstre.GlobalPosition);
-					if (caseAutreMonstre == targetTile)
+					if (caseAutreMonstre == targetTile || autreMonstre.CaseCible == targetTile)
 						return;
 				}
 			}
+			this.CaseCible = targetTile;
 
 		Vector2 targetPos = Grid.MapToLocal(targetTile);
 		Tween tween = CreateTween();

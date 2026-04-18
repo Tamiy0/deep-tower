@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://bu4xswa3b8o1r"]
+[gd_scene load_steps=10 format=4 uid="uid://bu4xswa3b8o1r"]
 
 [ext_resource type="Texture2D" uid="uid://hw62bv05rhfr" path="res://Assets/TileSet/TileSet_test.png" id="1_r40rm"]
 [ext_resource type="PackedScene" uid="uid://dw057iwema4c2" path="res://Joueur/Personnage_principal.tscn" id="2_6q4t8"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bqx8h0grkjur4" path="res://Monstres/monstre_test.tscn" id="4_8tcn8"]
 [ext_resource type="PackedScene" uid="uid://dev6fnu6eba1y" path="res://next_level.tscn" id="5_21xmu"]
 [ext_resource type="PackedScene" uid="uid://cikxx52tlll2k" path="res://Niveaux/level3.tscn" id="6_8i3m3"]
+[ext_resource type="Texture2D" uid="uid://n1ejm6timhle" path="res://Assets/Menu/Contrôles.png" id="7_tmdub"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r40rm"]
 texture = ExtResource("1_r40rm")
@@ -51,8 +52,12 @@ position = Vector2(232, 200)
 
 [node name="Minot" parent="Grid_2" instance=ExtResource("2_6q4t8")]
 z_index = 1
-position = Vector2(232, 168)
+position = Vector2(264, 152)
 
 [node name="SpritePassage" parent="Grid_2" instance=ExtResource("5_21xmu")]
 position = Vector2(232, 248)
 nextLevel = ExtResource("6_8i3m3")
+
+[node name="Contrôles" type="Sprite2D" parent="."]
+position = Vector2(232, 24)
+texture = ExtResource("7_tmdub")

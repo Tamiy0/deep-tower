@@ -6,6 +6,8 @@ public partial class MonstreDeBase : CharacterBody2D
 	[Signal]
 	public delegate void JoueurAttrapeEventHandler();
 
+	public Vector2I CaseCible = new Vector2I(-999, -999);
+
 	public override void _Ready()
 	{
 		var gameManager = GetNode<GameManager>("/root/GameManager");

@@ -41,7 +41,7 @@ public partial class Boule : MonstreDeBase
 		TileMapLayer Grid = this.GetNode<TileMapLayer>("..");
 		Minot Minot = this.GetNode<Minot>("../Minot");
 
-		if(!Minot.IsMoving)
+		if(Minot.IsMoving)
 		{
 			if (Grid == null) 
 			{
@@ -62,10 +62,11 @@ public partial class Boule : MonstreDeBase
 				if (autreMonstre != this) 
 				{
 					Vector2I caseAutreMonstre = Grid.LocalToMap(autreMonstre.GlobalPosition);
-					if (caseAutreMonstre == targetTile)
+					if (caseAutreMonstre == targetTile || autreMonstre.CaseCible == targetTile)
 						return;
 				}
 			}
+			this.CaseCible = targetTile;
 
 		Vector2 targetPos = Grid.MapToLocal(targetTile);
 		Tween tween = CreateTween();
